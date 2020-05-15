@@ -1,0 +1,50 @@
+'''
+This is a simple Heads Or Tails game source code
+Written by Neto
+04/20/2020
+
+'''
+
+import random #this is a module package from the standard library
+
+def flip_coin():
+    times = int(input("How many times do you to play Heads Or Tails? "))
+    
+    
+     # in case you want to implement a question at the end to replay the game
+     # create a While loop that iterates the game and at the end ask user input
+    # you can change the input above to ready to play
+    
+    playing = True
+    
+    heads=0
+    tails=0
+    
+    for x in range(times):
+        i=random.choice([0,1]) # return a random element between 0 and 1 (50%)
+        
+        if i==0: # assigns HEADS if random number is 0
+            heads+=1 # increases the count by 1 every time 0 is drawn
+            print ('Heads')
+       
+        else:
+            tails+=1 # assigns HEADS if random number is something other than 0
+            print('Tails')
+            
+    # IF statement to tell who wins after each round
+    # at other times played there will always
+    # be a winner
+    
+    if heads > tails: 
+        print("\nHeads Wins!")
+    elif heads == tails:
+        print("\nTIE!")
+    else:
+        print("\nTails Wins!")
+   
+     # print statements with the score after all iteractions from user
+
+    print("\nFINAL SCORE:")
+    print ('Heads: ' + str(heads))
+    print ('Tails: ' + str(tails))
+    print('Thanks for playing!')
